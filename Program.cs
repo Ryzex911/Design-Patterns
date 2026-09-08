@@ -1,51 +1,14 @@
-﻿using StrategyPattern.Ducks;
-using StrategyPattern.Interfaces.FlyBehavior;
-
-namespace StrategyPattern
+﻿namespace NoDesignPatternsBetaalmethode
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Duck mallardDuck = new MallardDuck();
-            Duck redheadDuck = new RedheadDuck();
-            Duck decoyDuck = new DecoyDuck();
-            Duck rubberDuck = new RubberDuck();
-            Duck RobotDuck = new RobotDuck();
+            BetaalProcessor processor = new BetaalProcessor(new CreditcardBetaalMethode("12345678912345677"));
 
-
-            Console.WriteLine("Mallard Duck");
-            mallardDuck.PerformQuack();
-            mallardDuck.PerformFly();
-            mallardDuck.PerformSwim();
-            Console.WriteLine();
-
-            Console.WriteLine("Redhead Duck");
-            redheadDuck.PerformQuack();
-            redheadDuck.PerformFly();
-            redheadDuck.PerformSwim();
-
-            Console.WriteLine();
-
-            Console.WriteLine("Decoy Duck");
-            decoyDuck.PerformQuack();
-            decoyDuck.PerformFly();
-            decoyDuck.PerformSwim();
-
-            Console.WriteLine();
-
-            Console.WriteLine("Rubber Duck");
-            rubberDuck.PerformQuack();
-            rubberDuck.PerformFly();
-            rubberDuck.PerformSwim();
-
-            Console.WriteLine();
-
-
-
-            Console.WriteLine("Robot Duck");
-            RobotDuck.PerformSwim();
-
+            processor.VerwerkBetaling(
+                100.00m,
+                );
 
         }
     }
