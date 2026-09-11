@@ -13,16 +13,20 @@ namespace ObserverPattern
             CurrentConditionDisplay currentDisplay = new CurrentConditionDisplay(weatherData);
             ForecastDisplay forecastDisplay = new ForecastDisplay(weatherData);
             StatisticsDisplay statisticsDisplay = new StatisticsDisplay(weatherData);
+            HeatWarningDisplay heatWarningDisplay = new HeatWarningDisplay(weatherData);
 
 
 
-            weatherData.SetMeasurements(28, 65, 30.4f);
-            weatherData.SetMeasurements(29, 70, 29.2f);
-            weatherData.SetMeasurements(30, 90, 29.2f);
+            //weatherData.SetMeasurements(28, 65, 30.4f);
+            //weatherData.SetMeasurements(29, 70, 29.2f);
+            //weatherData.SetMeasurements(30, 90, 29.2f);
 
             weatherData.RemoveObserver(forecastDisplay);
 
-            weatherData.SetMeasurements(25, 60, 30.0f);
+            //weatherData.SetMeasurements(25, 60, 30.0f);
+
+            weatherData.SetMeasurements(28, 90, 90.2f);
+
 
 
             Console.ReadKey();
