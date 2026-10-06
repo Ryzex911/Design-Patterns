@@ -1,0 +1,15 @@
+namespace NotificationApp;
+
+public class TimestampNotificationDecorator : NotificationDecorator
+{
+    public TimestampNotificationDecorator(INotificationService notificationService)
+        : base(notificationService)
+    {
+    }
+
+    public override void Send(string recipient, string message)
+    {
+        string tijd = DateTime.Now.ToString("HH:mm");
+        notificationService.Send(recipient, $"[{tijd}] {message}");
+    }
+}
